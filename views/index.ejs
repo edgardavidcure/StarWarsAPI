@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Quotes</title>
+</head>
+<body>
+    <h1>May Node Be With You</h1>
+    <form action="/quotes" method="post">
+        <label for="name"><input type="text" name="name" placeholder="name"></label>
+        <label for="quote"><input type="text" name="quote" placeholder="quote"></label>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Quotes</h2>
+    <div id="message"></div>
+    <ul class="quotes">
+        <% for(let i = 0; i < quotes.length; i++){%>
+            <li class="quote">
+                <span><%= quotes[i].name %></span>:
+                <span><%= quotes[i].quote %></span>
+            </li>
+            <%} %>
+
+    </ul>
+    <div>
+        <h2>Darth Vader invades!</h2>
+        <p>Replace first Yoda's quote with a quote written by Darth Vader</p>
+        <button id="update-button">Replace Yoda's quote</button>
+      </div>
+      <div>
+        <h2>Remove Darth Vader!</h2>
+        <p>
+          Delete one Darth Vader's quote. Does nothing if there are no more Darth
+          Vader's quote
+        </p>
+        <button id="delete-button">Delete Darth Vader's quote</button>
+      </div>
+<script src="/main.js"></script>
+</body>
+</html>
